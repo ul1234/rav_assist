@@ -1,0 +1,28 @@
+{
+	"name": "Rav Assistant",
+	"version": "1.4",
+	"description": "a rav result enhancement tool",
+    "background": {
+        "scripts": ["background.js"]
+    },
+	"content_scripts": [
+		{
+			"matches" : ["http://ukrav/results/*"],
+			"js": ["content_loader.js"]
+		}
+	],
+    "web_accessible_resources": [
+        "content.js",
+        "overlib_bubble_new_db.js"
+      ],
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_title": "rav assist"
+	},
+	"permissions": [
+        "tabs",
+        "contextMenus",
+        "http://ukrav/results/*"
+    ],
+	"manifest_version": 2
+}
